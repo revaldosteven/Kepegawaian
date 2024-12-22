@@ -17,7 +17,7 @@ import com.formdev.flatlaf.util.StringUtils;
 
 /**
  *
- * @author Good_Poeple
+ * @author Lutfi
  */
 public class PopUpPegawai extends javax.swing.JFrame {
 
