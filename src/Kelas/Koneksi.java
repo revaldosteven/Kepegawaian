@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Good_Poeple
+ * @author Wifna
  */
 public class Koneksi {
     private Connection konekSQL;
