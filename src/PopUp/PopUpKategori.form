@@ -61,8 +61,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtIDKategori" max="32767" attributes="0"/>
                               <Component id="txtNamaKategori" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtIDKategori" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -130,8 +130,6 @@
             <Property name="text" type="java.lang.String" value="Nama Kategori"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtIDKategori">
-        </Component>
         <Component class="javax.swing.JTextField" name="txtNamaKategori">
         </Component>
         <Component class="javax.swing.JButton" name="btnTambah">
@@ -166,6 +164,8 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtIDKategori">
         </Component>
       </SubComponents>
     </Container>

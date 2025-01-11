@@ -18,6 +18,7 @@ public class MenuBagian extends javax.swing.JPanel {
         initComponents();
         loadTable();
     }
+    
     void loadTable() {
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("ID");
@@ -108,8 +109,6 @@ public class MenuBagian extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        // TODO add your handling code here:
-//       new PopUpBagian().setVisible(true);
         PopUp.PopUpBagian bagian = new PopUpBagian();
         bagian.setVisible(true);
 

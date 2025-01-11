@@ -25,7 +25,6 @@ public class PopUpKategori extends javax.swing.JFrame {
         autoID();
         txtIDKategori.setEditable(false);
         txtNamaKategori.setText(null);
-
     }
 
     void autoID() {
@@ -41,7 +40,6 @@ public class PopUpKategori extends javax.swing.JFrame {
     public void setData(String ID, String Nama) {
         txtIDKategori.setText(ID);
         txtNamaKategori.setText(Nama);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -52,11 +50,11 @@ public class PopUpKategori extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtIDKategori = new javax.swing.JTextField();
         txtNamaKategori = new javax.swing.JTextField();
         btnTambah = new javax.swing.JButton();
         btnUbah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
+        txtIDKategori = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -115,8 +113,8 @@ public class PopUpKategori extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIDKategori)
-                            .addComponent(txtNamaKategori, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                            .addComponent(txtNamaKategori, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(txtIDKategori))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -164,8 +162,7 @@ public class PopUpKategori extends javax.swing.JFrame {
             kt.tambahKategori();
         } catch (SQLException sQLException) {
         }
-
-//        loadTable();
+        
         reset();
         
         MainMenu.pn_utama.removeAll();

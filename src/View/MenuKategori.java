@@ -113,7 +113,6 @@ public class MenuKategori extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        // TODO add your handling code here:
         PopUp.PopUpKategori kategori = new PopUpKategori();
         kategori.setVisible(true);
         

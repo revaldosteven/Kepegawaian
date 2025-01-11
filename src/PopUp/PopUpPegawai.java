@@ -17,7 +17,7 @@ import com.formdev.flatlaf.util.StringUtils;
 
 /**
  *
- * @author Lutfi
+ * @author Revaldo
  */
 public class PopUpPegawai extends javax.swing.JFrame {
 
@@ -27,7 +27,7 @@ public class PopUpPegawai extends javax.swing.JFrame {
         comboBoxJabatan();
         comboBoxKategori();
       //  DateTanggalMasuk.setDate(new Date());
-      setTanggalHariIni();
+        setTanggalHariIni();
     }
     
     private void setTanggalHariIni() {
@@ -38,49 +38,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         }
     }
     
-    void loadTable() {
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("NIK");
-        model.addColumn("Nama");
-        model.addColumn("Kategori");
-        model.addColumn("Bagian");
-        model.addColumn("Jabatan");
-        model.addColumn("NIDN");
-        model.addColumn("Jenis Kelamin");
-        model.addColumn("Email");
-        model.addColumn("Telepon");
-        model.addColumn("Alamat");
-        model.addColumn("Tanggal_masuk");
-        model.addColumn("Status");
-        
-        
-
-        try {
-            Pegawai pg = new Pegawai();
-            ResultSet data = pg.tampilPegawai();
-
-            while (data.next()) {
-                model.addRow(new Object[]{
-                    data.getString("nik "),
-                    data.getString("nama"),
-                    data.getString("id_kategori"),
-                    data.getString("id_bagian"),
-                    data.getString("id_jabatan"),
-                    data.getString("nidn"),
-                    data.getString("jenis_kelamin"),
-                    data.getString("email"),
-                    data.getString("telepon"),
-                    data.getString("alamat"),
-                    data.getString("tanggal_masuk"),
-                    data.getString("status"),});
-            }
-
-        } catch (SQLException sQLException) {
-
-        }
-
-        //tblKepegawaian.setModel(model);
-    }
     
     void comboBoxKategori() {
 
@@ -96,7 +53,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
-
     }
     
     void comboBoxBagian() {
@@ -113,7 +69,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
-
     }
     
     void comboBoxJabatan() {
@@ -130,7 +85,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
         }
-
     }
     
     void reset() {
@@ -173,6 +127,8 @@ public class PopUpPegawai extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -187,12 +143,10 @@ public class PopUpPegawai extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        txtNIK = new javax.swing.JTextField();
         txtNama = new javax.swing.JTextField();
         txtNIDN = new javax.swing.JTextField();
         cbKategori = new javax.swing.JComboBox<>();
         cbBagian = new javax.swing.JComboBox<>();
-        cbJabatan = new javax.swing.JComboBox<>();
         cbJK = new javax.swing.JComboBox<>();
         txtEmail = new javax.swing.JTextField();
         txtTelepon = new javax.swing.JTextField();
@@ -202,6 +156,12 @@ public class PopUpPegawai extends javax.swing.JFrame {
         btnUbah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         cbStatus = new javax.swing.JComboBox<>();
+        cbJabatan = new javax.swing.JComboBox<>();
+        txtNIK = new javax.swing.JTextField();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -259,6 +219,12 @@ public class PopUpPegawai extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Status");
 
+        txtNIDN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNIDNKeyTyped(evt);
+            }
+        });
+
         cbKategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbKategoriActionPerformed(evt);
@@ -272,6 +238,12 @@ public class PopUpPegawai extends javax.swing.JFrame {
         });
 
         cbJK.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan" }));
+
+        txtTelepon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTeleponKeyTyped(evt);
+            }
+        });
 
         btnTambah.setText("Tambah");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -295,6 +267,12 @@ public class PopUpPegawai extends javax.swing.JFrame {
         });
 
         cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif", "Tidak Aktif" }));
+
+        txtNIK.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNIKKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -320,18 +298,18 @@ public class PopUpPegawai extends javax.swing.JFrame {
                             .addComponent(jLabel13))
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNIK)
                             .addComponent(txtNama)
                             .addComponent(txtNIDN)
                             .addComponent(cbKategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbBagian, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbJabatan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbJK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtEmail)
                             .addComponent(txtTelepon)
                             .addComponent(txtAlamat)
                             .addComponent(DateTanggalMasuk, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(cbStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cbStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbJabatan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNIK))
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnTambah)
@@ -346,10 +324,10 @@ public class PopUpPegawai extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnTambah)))
+                        .addComponent(jLabel2)
+                        .addComponent(txtNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTambah))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -513,7 +491,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         } catch (Exception e) {
         }
 
-        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
@@ -533,89 +510,125 @@ public class PopUpPegawai extends javax.swing.JFrame {
 //    } else {
 //        txtNIDN.setVisible(true); // Menampilkan txtNIDN
 //    }
-        String selectedCategory = (String) cbKategori.getSelectedItem();
-
-        // Clear existing items in cbBagian and cbJabatan
-        cbBagian.removeAllItems();
-        cbJabatan.removeAllItems();
-
-        if ("Tenaga Pendidik".equals(selectedCategory)) {
-            // Add items to cbBagian for Tenaga Pendidik
-            cbBagian.addItem("Sistem Informasi");
-            cbBagian.addItem("Teknik Industri");
-            cbBagian.addItem("Pendidikan Teknologi Informasi");
-            cbBagian.addItem("Program Studi");
-
-            // Add items to cbJabatan for Tenaga Pendidik
-            cbJabatan.addItem("Rektor");
-            cbJabatan.addItem("Wakil Rektor 1");
-            cbJabatan.addItem("Wakil Rektor 2");
-            cbJabatan.addItem("Wakil Rektor 3");
-            cbJabatan.addItem("Kaprodi Sistem Informasi");
-            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
-            cbJabatan.addItem("Kaprodi Teknik Industri");
-            cbJabatan.addItem("Tidak Ada Jabatan");
-
-            txtNIDN.setVisible(true); // Show txtNIDN
-        } else if ("Tenaga Kependidikan".equals(selectedCategory)) {
-            // Add items to cbBagian for Tenaga Kependidikan
-            cbBagian.addItem("LPPM");
-            cbBagian.addItem("BAK");
-            cbBagian.addItem("BAU");
-
-            txtNIDN.setVisible(false); // Hide txtNIDN
-        }
+//        String selectedCategory = (String) cbKategori.getSelectedItem();
+//
+//        // Clear existing items in cbBagian and cbJabatan
+//        cbBagian.removeAllItems();
+//        cbJabatan.removeAllItems();
+//
+//        if ("Tenaga Pendidik".equals(selectedCategory)) {
+//            // Add items to cbBagian for Tenaga Pendidik
+//            cbBagian.addItem("Sistem Informasi");
+//            cbBagian.addItem("Teknik Industri");
+//            cbBagian.addItem("Pendidikan Teknologi Informasi");
+//            cbBagian.addItem("Program Studi");
+//
+//            // Add items to cbJabatan for Tenaga Pendidik
+//            cbJabatan.addItem("Rektor");
+//            cbJabatan.addItem("Wakil Rektor 1");
+//            cbJabatan.addItem("Wakil Rektor 2");
+//            cbJabatan.addItem("Wakil Rektor 3");
+//            cbJabatan.addItem("Kaprodi Sistem Informasi");
+//            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
+//            cbJabatan.addItem("Kaprodi Teknik Industri");
+//            cbJabatan.addItem("Tidak Ada Jabatan");
+//
+//            txtNIDN.setVisible(true); // Show txtNIDN
+//        } else if ("Tenaga Kependidikan".equals(selectedCategory)) {
+//            // Add items to cbBagian for Tenaga Kependidikan
+//            cbBagian.addItem("LPPM");
+//            cbBagian.addItem("BAK");
+//            cbBagian.addItem("BAU");
+//
+//            txtNIDN.setVisible(false); // Hide txtNIDN
+//        }
     }//GEN-LAST:event_cbKategoriActionPerformed
 
     private void cbBagianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBagianActionPerformed
-        String selectedBagian = (String) cbBagian.getSelectedItem();
-
-        // Clear existing items in cbJabatan
-        cbJabatan.removeAllItems();
-
-        
-        if ("Sistem Informasi".equals(selectedBagian)) {
-            cbJabatan.addItem("Rektor");
-            cbJabatan.addItem("Wakil Rektor 1");
-            cbJabatan.addItem("Wakil Rektor 2");
-            cbJabatan.addItem("Wakil Rektor 3");
-            cbJabatan.addItem("Kaprodi Sistem Informasi");
-        
-        } else if ("Pendidikan Teknologi Informasi".equals(selectedBagian)) {
-            // Add items to cbJabatan for LPPM
-            cbJabatan.addItem("Rektor");
-            cbJabatan.addItem("Wakil Rektor 1");
-            cbJabatan.addItem("Wakil Rektor 2");
-            cbJabatan.addItem("Wakil Rektor 3");
-            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
-         
-        } else if ("Teknik Industri".equals(selectedBagian)) {
-            cbJabatan.addItem("Rektor");
-            cbJabatan.addItem("Wakil Rektor 1");
-            cbJabatan.addItem("Wakil Rektor 2");
-            cbJabatan.addItem("Wakil Rektor 3");
-            cbJabatan.addItem("Kaprodi Teknik Industri");
-            
-        } else if ("Program Studi".equals(selectedBagian)) {
-            cbJabatan.addItem("Rektor");
-            cbJabatan.addItem("Wakil Rektor 1");
-            cbJabatan.addItem("Wakil Rektor 2");
-            cbJabatan.addItem("Wakil Rektor 3");
-            
-        } else if ("LPPM".equals(selectedBagian)) {
-            // Add items to cbJabatan for LPPM
-            cbJabatan.addItem("Ketua LPPM");
-            cbJabatan.addItem("Wakil Ketua LPPM");
-            cbJabatan.addItem("Kepala Divisi Penilitian");
-            cbJabatan.addItem("Kepala Divisi Pengabdian Masyarakat");
-        } else if ("BAK".equals(selectedBagian)) {
-            // Add items to cbJabatan for BAK
-            cbJabatan.addItem("Kepala BAK");
-        } else if ("BAU".equals(selectedBagian)) {
-            // Add items to cbJabatan for BAU
-            cbJabatan.addItem("Kepala BAU");
-        }
+//        String selectedBagian = (String) cbBagian.getSelectedItem();
+//
+//        // Clear existing items in cbJabatan
+//        cbJabatan.removeAllItems();
+//
+//        
+//        if ("Sistem Informasi".equals(selectedBagian)) {
+//            cbJabatan.addItem("Rektor");
+//            cbJabatan.addItem("Wakil Rektor 1");
+//            cbJabatan.addItem("Wakil Rektor 2");
+//            cbJabatan.addItem("Wakil Rektor 3");
+//            cbJabatan.addItem("Kaprodi Sistem Informasi");
+//        
+//        } else if ("Pendidikan Teknologi Informasi".equals(selectedBagian)) {
+//            // Add items to cbJabatan for LPPM
+//            cbJabatan.addItem("Rektor");
+//            cbJabatan.addItem("Wakil Rektor 1");
+//            cbJabatan.addItem("Wakil Rektor 2");
+//            cbJabatan.addItem("Wakil Rektor 3");
+//            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
+//         
+//        } else if ("Teknik Industri".equals(selectedBagian)) {
+//            cbJabatan.addItem("Rektor");
+//            cbJabatan.addItem("Wakil Rektor 1");
+//            cbJabatan.addItem("Wakil Rektor 2");
+//            cbJabatan.addItem("Wakil Rektor 3");
+//            cbJabatan.addItem("Kaprodi Teknik Industri");
+//            
+//        } else if ("Program Studi".equals(selectedBagian)) {
+//            cbJabatan.addItem("Rektor");
+//            cbJabatan.addItem("Wakil Rektor 1");
+//            cbJabatan.addItem("Wakil Rektor 2");
+//            cbJabatan.addItem("Wakil Rektor 3");
+//            
+//        } else if ("LPPM".equals(selectedBagian)) {
+//            // Add items to cbJabatan for LPPM
+//            cbJabatan.addItem("Ketua LPPM");
+//            cbJabatan.addItem("Wakil Ketua LPPM");
+//            cbJabatan.addItem("Kepala Divisi Penilitian");
+//            cbJabatan.addItem("Kepala Divisi Pengabdian Masyarakat");
+//        } else if ("BAK".equals(selectedBagian)) {
+//            // Add items to cbJabatan for BAK
+//            cbJabatan.addItem("Kepala BAK");
+//        } else if ("BAU".equals(selectedBagian)) {
+//            // Add items to cbJabatan for BAU
+//            cbJabatan.addItem("Kepala BAU");
+//        }
     }//GEN-LAST:event_cbBagianActionPerformed
+
+    private void txtTeleponKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTeleponKeyTyped
+        txtTelepon.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            // Memastikan hanya angka yang bisa diinputkan
+            if (!Character.isDigit(c) || txtTelepon.getText().length() >= 13) {
+                evt.consume(); // Mengabaikan karakter yang bukan angka atau melebihi limit
+            }
+        }
+    });
+    }//GEN-LAST:event_txtTeleponKeyTyped
+
+    private void txtNIKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNIKKeyTyped
+            txtNIK.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            // Memastikan hanya angka yang bisa diinputkan
+            if (!Character.isDigit(c) || txtNIK.getText().length() >= 12) {
+                evt.consume(); // Mengabaikan karakter yang bukan angka atau melebihi limit
+            }
+        }
+    });
+    }//GEN-LAST:event_txtNIKKeyTyped
+
+    private void txtNIDNKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNIDNKeyTyped
+        txtNIDN.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            // Memastikan hanya angka yang bisa diinputkan
+            if (!Character.isDigit(c) || txtNIDN.getText().length() >= 12) {
+                evt.consume(); // Mengabaikan karakter yang bukan angka atau melebihi limit
+            }
+        }
+    });
+    }//GEN-LAST:event_txtNIDNKeyTyped
 
     /**
      * @param args the command line arguments
@@ -679,6 +692,8 @@ public class PopUpPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNIDN;

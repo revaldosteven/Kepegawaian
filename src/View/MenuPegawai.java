@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Good_Poeple
+ * @author Revaldo 
  */
 public class MenuPegawai extends javax.swing.JPanel {
 
@@ -28,9 +28,8 @@ public class MenuPegawai extends javax.swing.JPanel {
                 cariPegawai(keyword); // Panggil metode pencarian
             }
         });
-//        comboBoxBagian();
-//        comboBoxJabatan();
     }
+    
   void loadTable() {
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("NIK");
@@ -46,14 +45,10 @@ public class MenuPegawai extends javax.swing.JPanel {
         model.addColumn("Bagian");
         model.addColumn("Jabatan");
         
-        
-
         try {
             Kelas.Pegawai pg = new Kelas.Pegawai();
             ResultSet data = pg.tampilPegawai();
-            
-            
-
+             
             while (data.next()) {
                 model.addRow(new Object[]{
                     data.getString("nik"),
@@ -68,13 +63,11 @@ public class MenuPegawai extends javax.swing.JPanel {
                     data.getString("nama_kategori"),
                     data.getString("nama_bagian"),
                     data.getString("nama_jabatan"),});
-
             }
 
         } catch (SQLException sQLException) {
 
         }
-
         tblPegawai.setModel(model);
     }
   
@@ -216,7 +209,6 @@ public class MenuPegawai extends javax.swing.JPanel {
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void tblPegawaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPegawaiMouseClicked
-        // TODO add your handling code here:
         try {
         int baris = tblPegawai.rowAtPoint(evt.getPoint());
         if (baris >= 0) { // Pastikan baris valid
@@ -231,11 +223,6 @@ public class MenuPegawai extends javax.swing.JPanel {
             String Telepon = tblPegawai.getValueAt(baris, 5) != null ? tblPegawai.getValueAt(baris, 5).toString() : "";
             String Alamat = tblPegawai.getValueAt(baris, 6) != null ? tblPegawai.getValueAt(baris, 6).toString() : "";
             String Tanggal_masuk = tblPegawai.getValueAt(baris, 7) != null ? tblPegawai.getValueAt(baris, 7).toString() : "";
-//            if (Tanggal_masuk != null && !Tanggal_masuk.isEmpty()) {
-//                    java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id", "ID"));
-//                    java.util.Date date = formatter.parse(Tanggal_masuk);
-//                    DateTanggalMasuk.setDate(date);
-//                }
             String Status = tblPegawai.getValueAt(baris, 11) != null ? tblPegawai.getValueAt(baris, 11).toString() : "";
             
             // Membuka FrameBarang dan mengirimkan data
@@ -247,7 +234,6 @@ public class MenuPegawai extends javax.swing.JPanel {
     } catch (Exception ex) {
             System.out.println("gagal " + ex.getMessage());
         JOptionPane.showMessageDialog(this, "Terjadi kesalahan saat memilih data: " + ex.getMessage());
-            //System.out.println("ex"+ex.getMessage());
     } finally {
        //isTableSelection = false; // Selesai seleksi dari tabel
     }

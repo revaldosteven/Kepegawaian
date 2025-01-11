@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Good_Poeple
+ * @author Revaldo
  */
 public class Pegawai {
     private static String nik, nama, id_kategori, id_bagian, id_jabatan, nidn, jenis_kelamin, email, telepon, alamat, status; 
@@ -200,7 +200,7 @@ public class Pegawai {
                 + "telepon = ?, "
                 + "alamat = ?, "
                 + "tanggal_masuk = ?, "
-                + "status = ?` "
+                + "status = ? "
                 + "WHERE nik = ?";
 
         try {

@@ -7,7 +7,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Good_Poeple
+ * @author Revaldo
  */
 public class MainMenu extends javax.swing.JFrame {
 
@@ -553,7 +553,6 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void btnPegawaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPegawaiMouseClicked
-        // TODO add your handling code here:
         pn_main2.setBackground(new Color(240,240,240));
         pn_line2.setBackground(new Color(0,153,255));
         
@@ -564,19 +563,16 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPegawaiMouseClicked
 
     private void btnPegawaiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPegawaiMouseEntered
-        // TODO add your handling code here:
         pn_main2.setBackground(new Color(250,250,250));
         pn_line2.setBackground(new Color(0,153,255));
     }//GEN-LAST:event_btnPegawaiMouseEntered
 
     private void btnPegawaiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPegawaiMouseExited
-        // TODO add your handling code here:
         pn_main2.setBackground(new Color(255,255,255));
         pn_line2.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_btnPegawaiMouseExited
 
     private void btnBagianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBagianMouseClicked
-        // TODO add your handling code here:
         pn_main4.setBackground(new Color(240,240,240));
         pn_line4.setBackground(new Color(0,153,255));
         
@@ -587,19 +583,16 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBagianMouseClicked
 
     private void btnBagianMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBagianMouseEntered
-        // TODO add your handling code here:
         pn_main4.setBackground(new Color(250,250,250));
         pn_line4.setBackground(new Color(0,153,255));
     }//GEN-LAST:event_btnBagianMouseEntered
 
     private void btnBagianMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBagianMouseExited
-        // TODO add your handling code here:
         pn_main4.setBackground(new Color(255,255,255));
         pn_line4.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_btnBagianMouseExited
 
     private void btnJabatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJabatanMouseClicked
-        // TODO add your handling code here:
         pn_main5.setBackground(new Color(240,240,240));
         pn_line5.setBackground(new Color(0,153,255));
         
@@ -610,19 +603,16 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnJabatanMouseClicked
 
     private void btnJabatanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJabatanMouseEntered
-        // TODO add your handling code here:
         pn_main5.setBackground(new Color(250,250,250));
         pn_line5.setBackground(new Color(0,153,255));
     }//GEN-LAST:event_btnJabatanMouseEntered
 
     private void btnJabatanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJabatanMouseExited
-        // TODO add your handling code here:
         pn_main5.setBackground(new Color(255,255,255));
         pn_line5.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_btnJabatanMouseExited
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
-        // TODO add your handling code here:
         pn_main6.setBackground(new Color(240,240,240));
         pn_line6.setBackground(new Color(0,153,255));
         
@@ -633,19 +623,16 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDashboardMouseClicked
 
     private void btnDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseEntered
-        // TODO add your handling code here:
         pn_main6.setBackground(new Color(250,250,250));
         pn_line6.setBackground(new Color(0,153,255));
     }//GEN-LAST:event_btnDashboardMouseEntered
 
     private void btnDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseExited
-        // TODO add your handling code here:
         pn_main6.setBackground(new Color(255,255,255));
         pn_line6.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_btnDashboardMouseExited
 
     private void btnKategori1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKategori1MouseClicked
-        // TODO add your handling code here:
         pn_main7.setBackground(new Color(240,240,240));
         pn_line7.setBackground(new Color(0,153,255));
         
@@ -656,19 +643,16 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKategori1MouseClicked
 
     private void btnKategori1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKategori1MouseEntered
-        // TODO add your handling code here:
         pn_main7.setBackground(new Color(250,250,250));
         pn_line7.setBackground(new Color(0,153,255));
     }//GEN-LAST:event_btnKategori1MouseEntered
 
     private void btnKategori1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKategori1MouseExited
-        // TODO add your handling code here:
         pn_main7.setBackground(new Color(255,255,255));
         pn_line7.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_btnKategori1MouseExited
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         pn_utama.add(new MenuDashboard());
         pn_utama.repaint();
         pn_utama.revalidate();

@@ -6,14 +6,14 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Wifna
+ * @author Wifna 
  */
 public class Koneksi {
     private Connection konekSQL;
     private String host = "localhost";
-    private String db = "aplikasi_kepegawaian";
+    private String db = "kepegawaian";
     private String user = "root";
-    private String password = "revaldosteven260504";
+    private String password = "";
     private String port = "3306";
     private String url = "jdbc:mysql://" + host + ":" + port + "/" + db;
     

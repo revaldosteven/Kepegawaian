@@ -40,6 +40,8 @@ public class MenuJabatan extends javax.swing.JPanel {
 
         tblJabatan.setModel(model);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -112,7 +114,6 @@ public class MenuJabatan extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        // TODO add your handling code here:
         PopUp.PopUpJabatan jabatan = new PopUpJabatan();
         jabatan.setVisible(true);
         

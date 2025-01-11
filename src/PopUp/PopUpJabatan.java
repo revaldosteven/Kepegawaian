@@ -19,38 +19,13 @@ public class PopUpJabatan extends javax.swing.JFrame {
 
     public PopUpJabatan() {
         initComponents();
-        loadTable();
         reset();
-    }
-
-    void loadTable() {
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("ID");
-        model.addColumn("Nama");
-
-        try {
-            Jabatan jb = new Jabatan();
-            ResultSet data = jb.tampilJabatan();
-
-            while (data.next()) {
-                model.addRow(new Object[]{
-                    data.getString("id_jabatan"),
-                    data.getString("nama_jabatan"),});
-
-            }
-
-        } catch (SQLException sQLException) {
-
-        }
-
-       // tblJabatan.setModel(model);
     }
 
     void reset() {
         autoID();
         txtIDJabatan.setEditable(false);
         txtNamaJabatan.setText(null);
-
     }
 
     void autoID() {
@@ -66,7 +41,6 @@ public class PopUpJabatan extends javax.swing.JFrame {
     public void setData(String ID, String Nama) {
         txtIDJabatan.setText(ID);
         txtNamaJabatan.setText(Nama);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -204,7 +178,6 @@ public class PopUpJabatan extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
@@ -224,7 +197,6 @@ public class PopUpJabatan extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
@@ -243,7 +215,6 @@ public class PopUpJabatan extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();

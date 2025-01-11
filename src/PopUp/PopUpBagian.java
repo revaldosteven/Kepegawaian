@@ -21,34 +21,10 @@ public class PopUpBagian extends javax.swing.JFrame {
         reset();
     }
 
-    void loadTable() {
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("ID");
-        model.addColumn("Nama");
-
-        try {
-            Bagian bg = new Bagian();
-            ResultSet data = bg.tampilBagian();
-
-            while (data.next()) {
-                model.addRow(new Object[]{
-                    data.getString("id_bagian"),
-                    data.getString("nama_bagian"),});
-
-            }
-
-        } catch (SQLException sQLException) {
-
-        }
-
-        //tblDevisi.setModel(model);
-    }
-
     void reset() {
         autoID();
         txtIDBagian.setEditable(false);
         txtNamaBagian.setText(null);
-
     }
 
    void autoID() {
@@ -64,7 +40,6 @@ public class PopUpBagian extends javax.swing.JFrame {
     public void setData(String ID, String Nama) {
         txtIDBagian.setText(ID);
         txtNamaBagian.setText(Nama);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -188,7 +163,6 @@ public class PopUpBagian extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
@@ -209,10 +183,6 @@ public class PopUpBagian extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-//        loadTable();
-//        reset();
-
-//        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
@@ -231,7 +201,6 @@ public class PopUpBagian extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
         }
 
-//        loadTable();
         reset();
         
         MainMenu.pn_utama.removeAll();
