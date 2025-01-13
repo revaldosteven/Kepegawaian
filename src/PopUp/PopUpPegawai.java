@@ -145,8 +145,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtNama = new javax.swing.JTextField();
         txtNIDN = new javax.swing.JTextField();
-        cbKategori = new javax.swing.JComboBox<>();
-        cbBagian = new javax.swing.JComboBox<>();
         cbJK = new javax.swing.JComboBox<>();
         txtEmail = new javax.swing.JTextField();
         txtTelepon = new javax.swing.JTextField();
@@ -158,6 +156,8 @@ public class PopUpPegawai extends javax.swing.JFrame {
         cbStatus = new javax.swing.JComboBox<>();
         cbJabatan = new javax.swing.JComboBox<>();
         txtNIK = new javax.swing.JTextField();
+        cbKategori = new javax.swing.JComboBox<>();
+        cbBagian = new javax.swing.JComboBox<>();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -225,18 +225,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
             }
         });
 
-        cbKategori.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbKategoriActionPerformed(evt);
-            }
-        });
-
-        cbBagian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbBagianActionPerformed(evt);
-            }
-        });
-
         cbJK.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan" }));
 
         txtTelepon.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -300,8 +288,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNama)
                             .addComponent(txtNIDN)
-                            .addComponent(cbKategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbBagian, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbJK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtEmail)
                             .addComponent(txtTelepon)
@@ -309,7 +295,9 @@ public class PopUpPegawai extends javax.swing.JFrame {
                             .addComponent(DateTanggalMasuk, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(cbStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbJabatan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNIK))
+                            .addComponent(txtNIK)
+                            .addComponent(cbKategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbBagian, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnTambah)
@@ -336,8 +324,8 @@ public class PopUpPegawai extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(cbKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHapus))
+                    .addComponent(btnHapus)
+                    .addComponent(cbKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -499,100 +487,6 @@ public class PopUpPegawai extends javax.swing.JFrame {
         MainMenu.pn_utama.revalidate();
         dispose();
     }//GEN-LAST:event_btnHapusActionPerformed
-
-    private void cbKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbKategoriActionPerformed
-        // Mendapatkan item yang dipilih dari combo box
-//    String selectedCategory = (String) cbKategori.getSelectedItem();
-//
-//    // Cek apakah kategori yang dipilih adalah "Tenaga Kependidikan"
-//    if ("Tenaga Kependidikan".equals(selectedCategory)) {
-//        txtNIDN.setVisible(false); // Menyembunyikan txtNIDN
-//    } else {
-//        txtNIDN.setVisible(true); // Menampilkan txtNIDN
-//    }
-//        String selectedCategory = (String) cbKategori.getSelectedItem();
-//
-//        // Clear existing items in cbBagian and cbJabatan
-//        cbBagian.removeAllItems();
-//        cbJabatan.removeAllItems();
-//
-//        if ("Tenaga Pendidik".equals(selectedCategory)) {
-//            // Add items to cbBagian for Tenaga Pendidik
-//            cbBagian.addItem("Sistem Informasi");
-//            cbBagian.addItem("Teknik Industri");
-//            cbBagian.addItem("Pendidikan Teknologi Informasi");
-//            cbBagian.addItem("Program Studi");
-//
-//            // Add items to cbJabatan for Tenaga Pendidik
-//            cbJabatan.addItem("Rektor");
-//            cbJabatan.addItem("Wakil Rektor 1");
-//            cbJabatan.addItem("Wakil Rektor 2");
-//            cbJabatan.addItem("Wakil Rektor 3");
-//            cbJabatan.addItem("Kaprodi Sistem Informasi");
-//            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
-//            cbJabatan.addItem("Kaprodi Teknik Industri");
-//            cbJabatan.addItem("Tidak Ada Jabatan");
-//
-//            txtNIDN.setVisible(true); // Show txtNIDN
-//        } else if ("Tenaga Kependidikan".equals(selectedCategory)) {
-//            // Add items to cbBagian for Tenaga Kependidikan
-//            cbBagian.addItem("LPPM");
-//            cbBagian.addItem("BAK");
-//            cbBagian.addItem("BAU");
-//
-//            txtNIDN.setVisible(false); // Hide txtNIDN
-//        }
-    }//GEN-LAST:event_cbKategoriActionPerformed
-
-    private void cbBagianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBagianActionPerformed
-//        String selectedBagian = (String) cbBagian.getSelectedItem();
-//
-//        // Clear existing items in cbJabatan
-//        cbJabatan.removeAllItems();
-//
-//        
-//        if ("Sistem Informasi".equals(selectedBagian)) {
-//            cbJabatan.addItem("Rektor");
-//            cbJabatan.addItem("Wakil Rektor 1");
-//            cbJabatan.addItem("Wakil Rektor 2");
-//            cbJabatan.addItem("Wakil Rektor 3");
-//            cbJabatan.addItem("Kaprodi Sistem Informasi");
-//        
-//        } else if ("Pendidikan Teknologi Informasi".equals(selectedBagian)) {
-//            // Add items to cbJabatan for LPPM
-//            cbJabatan.addItem("Rektor");
-//            cbJabatan.addItem("Wakil Rektor 1");
-//            cbJabatan.addItem("Wakil Rektor 2");
-//            cbJabatan.addItem("Wakil Rektor 3");
-//            cbJabatan.addItem("Kaprodi Pendidikan Teknologi Informasi");
-//         
-//        } else if ("Teknik Industri".equals(selectedBagian)) {
-//            cbJabatan.addItem("Rektor");
-//            cbJabatan.addItem("Wakil Rektor 1");
-//            cbJabatan.addItem("Wakil Rektor 2");
-//            cbJabatan.addItem("Wakil Rektor 3");
-//            cbJabatan.addItem("Kaprodi Teknik Industri");
-//            
-//        } else if ("Program Studi".equals(selectedBagian)) {
-//            cbJabatan.addItem("Rektor");
-//            cbJabatan.addItem("Wakil Rektor 1");
-//            cbJabatan.addItem("Wakil Rektor 2");
-//            cbJabatan.addItem("Wakil Rektor 3");
-//            
-//        } else if ("LPPM".equals(selectedBagian)) {
-//            // Add items to cbJabatan for LPPM
-//            cbJabatan.addItem("Ketua LPPM");
-//            cbJabatan.addItem("Wakil Ketua LPPM");
-//            cbJabatan.addItem("Kepala Divisi Penilitian");
-//            cbJabatan.addItem("Kepala Divisi Pengabdian Masyarakat");
-//        } else if ("BAK".equals(selectedBagian)) {
-//            // Add items to cbJabatan for BAK
-//            cbJabatan.addItem("Kepala BAK");
-//        } else if ("BAU".equals(selectedBagian)) {
-//            // Add items to cbJabatan for BAU
-//            cbJabatan.addItem("Kepala BAU");
-//        }
-    }//GEN-LAST:event_cbBagianActionPerformed
 
     private void txtTeleponKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTeleponKeyTyped
         txtTelepon.addKeyListener(new java.awt.event.KeyAdapter() {
